@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 export const useLocalStorage =  (key, initialValue) => {
   const [storedValue, setStoredValue] = useState(() => {
-    const item = window.localStorage.getItem(key);
+    const item = window.localStorage.getItem('dark?');
     return item ? JSON.parse(item) : initialValue;
   });
 
@@ -10,7 +10,7 @@ export const useLocalStorage =  (key, initialValue) => {
     // Save state
     setStoredValue(value);
     // Save to local storage
-    window.localStorage.setItem(key, JSON.stringify(value));
+    window.localStorage.setItem('dark?', JSON.stringify(value));
   };
 
   return [storedValue, setValue];
